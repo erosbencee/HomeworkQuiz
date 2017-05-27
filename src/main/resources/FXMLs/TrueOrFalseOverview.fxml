@@ -15,6 +15,6 @@
          </children>
       </Pane>
       <Button fx:id="closeButton" layoutX="432.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleBackToMain" text="Mentés és kilépés" />
-   	  <Button layoutX="259.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleShowTheNextQuestion" text="Mutasd a következő kérdést" />
+   	  <Button layoutX="219.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleShowTheNextQuestion" text="Mutasd a következő kérdést" />
    </children>
 </AnchorPane>
