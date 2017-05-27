@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.bence.jatek.view.QuestionController">
+   <children>
+      <Pane layoutX="50.0" layoutY="70.0" prefHeight="130.0" prefWidth="500.0" style="-fx-background-color: #EF9E40;" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Text fx:id="placeOfText" layoutX="14.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mennyi 1 + 1 = ?" />
+         </children>
+      </Pane>
+      <Button fx:id="closeButton" layoutX="432.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleBackToMain" text="Mentés és kilépés" />
+      <Button layoutX="259.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleShowTheNextQuestion" text="Mutasd a következő kérdést" />
+      <TextField fx:id="textFieldForUserGuess" layoutX="50.0" layoutY="200.0" prefHeight="50.0" prefWidth="500.0" />
+      <Text fx:id="textForShowResult" fill="#0a0a0a" layoutX="50.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="499.99998807907104" />
+      <Button fx:id="resultBt" layoutX="433.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleCorrectAnswerHasClicked" prefHeight="25.0" prefWidth="117.0" text="Válasz ellenőrzése" />
+   </children>
+</AnchorPane>

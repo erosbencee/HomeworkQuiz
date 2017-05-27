@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+	<persistence-unit name="QuizGameService">
+		<class>hu.bence.jatek.model.Player</class>
+		<class>hu.bence.jatek.model.kerdes.QuestionText</class>
+		<class>hu.bence.jatek.model.kerdes.AnswerText</class>
+		<class>hu.bence.jatek.model.kerdes.CorrectAnswer</class>
+		<class>hu.bence.jatek.model.kerdes.CategoryValues</class>
+		<class>hu.bence.jatekDatavaseTest</class>
+	<properties>
+		<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<!-- The JDBC URL to the database instance -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql8.freemysqlhosting.net:3306/sql8175258" />
+			<!-- The database username -->
+			<property name="javax.persistence.jdbc.user" value="sql8175258" />
+			<!-- The database password -->
+			<property name="javax.persistence.jdbc.password" value="AAyK77Rv9F" />
+
+			<property name="hibernate.use_sql_comments" value="true"/>
+		<property name="hibernate.format.sql" value="true"/>
+		<property name="hibernate.show_sql" value="true"/>
+		<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
+		
+
+	</properties>
+	</persistence-unit>
+</persistence>
