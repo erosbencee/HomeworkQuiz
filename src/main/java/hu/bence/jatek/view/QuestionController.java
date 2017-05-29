@@ -265,8 +265,8 @@ public class QuestionController {
 	     trueBt.setDisable(true);
 	     falseBt.setDisable(true);
 		
-		 bt.setDisable(false);
-		 bt.setStyle("-fx-border-color:green; -fx-background-color: green;");
+		 bt.setStyle("-fx-background-color: green;"
+		 		+ "-fx-border-color: #ff8c00; -fx-border-width: 5px;");
 		 
 		 if(actualQuestions.getAllQuestions().get(counting).getCategory() >= 1 && actualQuestions.getAllQuestions().get(counting).getCategory() <= 2) {
 			 addGamePoint(EASY);
@@ -282,8 +282,8 @@ public class QuestionController {
 			    trueBt.setDisable(true);
 			    falseBt.setDisable(true);
 				falseBt.setStyle("-fx-border-color:green; -fx-background-color: green;");
-				bt.setDisable(false);
-				bt.setStyle("-fx-border-color:red; -fx-background-color: red;");
+				bt.setStyle("-fx-background-color: red;"
+						+ "-fx-border-color: #ff8c00; -fx-border-width: 5px;");
 				logger.info("The player has answered wrong.");
 		}		
 	}
@@ -299,7 +299,7 @@ public class QuestionController {
 			logger.info("The player has answered correct!");
 			textForShowResult.setText("Helyes válasz!");
 			textForShowResult.setFill(Color.GREEN);
-			//addGamePoint(5);
+
 			 if(actualQuestions.getAllQuestions().get(counting).getCategory() >= 1 && actualQuestions.getAllQuestions().get(counting).getCategory() <= 2) {
 				 addGamePoint(EASY);
 			 } else if(actualQuestions.getAllQuestions().get(counting).getCategory() >= 3 && actualQuestions.getAllQuestions().get(counting).getCategory() <= 5){
@@ -315,7 +315,8 @@ public class QuestionController {
 			}
 			
 			textFieldForUserGuess.setDisable(true);
-		
+			resultBt.setDisable(true);
+			
 		} else {
 			logger.info("The player has pressed check button without write a guess in the textfield.");
 			textForShowResult.setText("Először írd be a helyesnek gondolt választ!");
@@ -328,7 +329,7 @@ public class QuestionController {
 		Button bt =(Button)event.getSource();
 		
 		if(hasThePlayerSelectedTheCorrectFromFourPossibleOptions(bt)) {
-			 //addGamePoint(5);
+
 			 if(actualQuestions.getAllQuestions().get(counting).getCategory() >= 1 && actualQuestions.getAllQuestions().get(counting).getCategory() <= 2) {
 				 addGamePoint(EASY);
 			 } else if(actualQuestions.getAllQuestions().get(counting).getCategory() >= 3 && actualQuestions.getAllQuestions().get(counting).getCategory() <= 5){
@@ -347,24 +348,25 @@ public class QuestionController {
 		Text textBt = (Text) userGuess.getGraphic();
 		
 		if(correctAnswer.equals(textBt.getText())){
-			userGuess.setStyle("-fx-border-color:green; -fx-background-color: green;");
-			
+			userGuess.setStyle("-fx-background-color: green;"
+					+ "-fx-border-color: #ff8c00; -fx-border-width: 5px;");
 			for (Button button : awnserArray) {
-				if(button != userGuess){
+				
 					button.setDisable(true);
-				}
+				
 			}
 			logger.info("The player has answered correct!");
 			return true;
 				
 		} else {
-			userGuess.setStyle("-fx-border-color:red; -fx-background-color: red;");
+			userGuess.setStyle("-fx-background-color: red;"
+					+ "-fx-border-color: #ff8c00; -fx-border-width: 5px;");
 			for (Button button : awnserArray) {
 				
 				Text otherBtText =(Text) button.getGraphic();
-				if(button != userGuess) {
-					button.setDisable(true);
-				}
+				
+				button.setDisable(true);
+			
 				
 				if(correctAnswer.equals(otherBtText.getText())) {		
 					button.setStyle("-fx-border-color:green; -fx-background-color: green;");
